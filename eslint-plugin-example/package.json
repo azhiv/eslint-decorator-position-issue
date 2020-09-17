@@ -1,0 +1,51 @@
+{
+  "name": "eslint-plugin-example",
+  "version": "0.0.0",
+  "repository": "",
+  "private": true,
+  "main": "lib/index.js",
+  "scripts": {
+    "install:ci": "yarn install --frozen-lockfile --ignore-optional",
+    "lint": "eslint . --cache",
+    "lint:ci": "eslint . --format=tap",
+    "start": "yarn run test:watch",
+    "test": "jest",
+    "test:ci": "jest --reporters=\"jest-tap-reporter\"",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watchAll"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^7.0.0",
+    "eslint-plugin-decorator-position": "^2.2.1",
+    "eslint-plugin-ember": "^8.1.1",
+    "eslint-plugin-eslint-comments": "^3.1.2",
+    "eslint-plugin-eslint-plugin": "^2.2.0",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jest": "^23.6.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-unicorn": "^21.0.0",
+    "jest": "^26.0.1",
+    "jest-tap-reporter": "^1.9.0"
+  },
+  "jest": {
+    "testMatch": [
+      "**/tests/**/*.js"
+    ],
+    "testEnvironment": "node",
+    "coverageThreshold": {
+      "global": {
+        "branches": 96,
+        "functions": 99,
+        "lines": 98,
+        "statements": 98
+      }
+    }
+  },
+  "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "require-from-string": "^2.0.2"
+  }
+}
